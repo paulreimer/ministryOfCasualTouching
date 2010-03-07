@@ -4,13 +4,15 @@
 
 #include "settings.h"
 #include "ofxMSAFluid.h"
+#include "FluidDrawer.h"
 #include "ParticleSystem.h"
 #include "Particle.h"
 #include "msaColor.h"
 
 #define FLUID_WIDTH 150
 
-class PhysicsSystem : public ofBaseUpdates {
+class PhysicsSystem
+: public ofBaseUpdates {
 public:	
 	PhysicsSystem();
 	virtual ~PhysicsSystem();
@@ -31,8 +33,7 @@ public:
 	void addToFluid(float x, float y, float dx, float dy, bool addColor = true, bool addForce = true);
 
 	ofxMSAFluidSolver	fluidSolver;
-	ofxMSAFluidDrawer	fluidDrawer;	
+	FluidDrawer			fluidDrawer;	
 
 	ParticleSystem		particleSystem;
-
 };

@@ -2,7 +2,8 @@
 
 #include "WebSocketHandler.h"
 
-class UIWebSocketHandler : public WebSocketHandler
+class UIWebSocketHandler
+: public WebSocketHandler
 {
 public:
 	UIWebSocketHandler();

@@ -118,6 +118,10 @@ testApp::update()
 			physicsSystem.settings.renderUsingVA = (m.getArgAsInt32(0) != 0);
 		else if	(mAddr == "/physics/fluidDrawer/drawMode")
 			physicsSystem.fluidDrawer.drawMode = m.getArgAsInt32(0);
+		else if	(mAddr == "/physics/fluidDrawer/minVelThreshold")
+			physicsSystem.fluidDrawer.minVelThreshold = m.getArgAsFloat(0);
+		else if	(mAddr == "/physics/fluidDrawer/maxVelThreshold")
+			physicsSystem.fluidDrawer.maxVelThreshold = m.getArgAsFloat(0);
 
 		else if	(mAddr == "/physics/fluidSolver/viscosity")
 			physicsSystem.fluidSolver.viscocity = m.getArgAsFloat(0);
@@ -174,6 +178,8 @@ testApp::update()
 			m.addIntArg(physicsSystem.settings.drawParticles? 1:0);
 			m.addIntArg(physicsSystem.settings.drawFluid? 1:0);
 			m.addIntArg(physicsSystem.fluidDrawer.drawMode);
+			m.addFloatArg(physicsSystem.fluidDrawer.minVelThreshold);
+			m.addFloatArg(physicsSystem.fluidDrawer.maxVelThreshold);
 			
 			osc_out.sendMessage(m);
 		}

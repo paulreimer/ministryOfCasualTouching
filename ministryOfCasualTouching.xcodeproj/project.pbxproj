@@ -18,6 +18,7 @@
 		872609CC11422326003C4EF1 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 872609BA11422325003C4EF1 /* ofxOscMessage.cpp */; };
 		872609CD11422326003C4EF1 /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 872609BC11422325003C4EF1 /* ofxOscReceiver.cpp */; };
 		872609CE11422326003C4EF1 /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 872609BE11422325003C4EF1 /* ofxOscSender.cpp */; };
+		87260B1011443DB8003C4EF1 /* FluidDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87260B0E11443DB8003C4EF1 /* FluidDrawer.cpp */; };
 		877F1C321132200000DA13CE /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 877F1C281132200000DA13CE /* Particle.cpp */; };
 		877F1C331132200000DA13CE /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 877F1C2A1132200000DA13CE /* ParticleSystem.cpp */; };
 		877F1C341132200000DA13CE /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 877F1C2C1132200000DA13CE /* PhysicsSystem.cpp */; };
@@ -153,6 +154,8 @@
 		872609BD11422325003C4EF1 /* ofxOscReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxOscReceiver.h; path = ../../../addons/ofxOsc/src/ofxOscReceiver.h; sourceTree = SOURCE_ROOT; };
 		872609BE11422325003C4EF1 /* ofxOscSender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxOscSender.cpp; path = ../../../addons/ofxOsc/src/ofxOscSender.cpp; sourceTree = SOURCE_ROOT; };
 		872609BF11422325003C4EF1 /* ofxOscSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxOscSender.h; path = ../../../addons/ofxOsc/src/ofxOscSender.h; sourceTree = SOURCE_ROOT; };
+		87260B0E11443DB8003C4EF1 /* FluidDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FluidDrawer.cpp; path = src/FluidDrawer.cpp; sourceTree = SOURCE_ROOT; };
+		87260B0F11443DB8003C4EF1 /* FluidDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FluidDrawer.h; path = src/FluidDrawer.h; sourceTree = SOURCE_ROOT; };
 		877F1C271132200000DA13CE /* msaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = msaColor.h; path = src/msaColor.h; sourceTree = SOURCE_ROOT; };
 		877F1C281132200000DA13CE /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = src/Particle.cpp; sourceTree = SOURCE_ROOT; };
 		877F1C291132200000DA13CE /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = src/Particle.h; sourceTree = SOURCE_ROOT; };
@@ -667,6 +670,8 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				87260B0E11443DB8003C4EF1 /* FluidDrawer.cpp */,
+				87260B0F11443DB8003C4EF1 /* FluidDrawer.h */,
 				8793AEB211335F390029D0C8 /* WebSocketServer.h */,
 				8793AE1C113345170029D0C8 /* ui.proto */,
 				8793ADF3113334520029D0C8 /* UIWebSocketHandler.cpp */,
@@ -880,6 +885,7 @@
 				872609CC11422326003C4EF1 /* ofxOscMessage.cpp in Sources */,
 				872609CD11422326003C4EF1 /* ofxOscReceiver.cpp in Sources */,
 				872609CE11422326003C4EF1 /* ofxOscSender.cpp in Sources */,
+				87260B1011443DB8003C4EF1 /* FluidDrawer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

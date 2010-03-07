@@ -44,6 +44,8 @@ VideoSystem& VideoSystem::setup()
 	
 	img_sz = cvGetSize( grayImg.getCvImage() );	
 	pyr_sz = cvSize( grayImg.getCvImage()->width+8, grayPrev.getCvImage()->height/3 ); 
+	
+	myApp->physicsSystem.fluidDrawer.mask = &colorImg;
 }
 
 void VideoSystem::update()

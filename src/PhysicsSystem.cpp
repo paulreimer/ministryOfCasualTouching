@@ -40,7 +40,7 @@ void PhysicsSystem::update() {
 void PhysicsSystem::draw() {
 	if(settings.drawFluid) {
 		glColor3f(1, 1, 1);
-		fluidDrawer.draw(0, 0, myApp->window.width, myApp->window.height);
+		fluidDrawer.draw(0., 0., myApp->window.width, myApp->window.height);
 	}
 	if(settings.drawParticles) {
 		particleSystem.draw();
