@@ -7,7 +7,7 @@ FluidDrawer::FluidDrawer()
 {
 	mask = NULL;
 	maxVelThreshold = FLT_MAX;
-	minVelThreshold = 0.0;
+	minVelThreshold = 0.;
 }
 
 //--------------------------------------------------------------

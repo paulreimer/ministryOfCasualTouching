@@ -31,10 +31,6 @@
 		877F1CDD1132206000DA13CE /* ofxCvGrayscaleImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 877F1C821132206000DA13CE /* ofxCvGrayscaleImage.cpp */; };
 		877F1CDE1132206000DA13CE /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 877F1C841132206000DA13CE /* ofxCvImage.cpp */; };
 		877F1CDF1132206000DA13CE /* ofxCvShortImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 877F1C871132206000DA13CE /* ofxCvShortImage.cpp */; };
-		8793ADCA11330A8B0029D0C8 /* ThreadedWebSocketServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8793ADC511330A8B0029D0C8 /* ThreadedWebSocketServer.cpp */; };
-		8793ADCB11330A8B0029D0C8 /* WebSocketHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8793ADC811330A8B0029D0C8 /* WebSocketHandler.cpp */; };
-		8793ADF5113334520029D0C8 /* UIWebSocketHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8793ADF3113334520029D0C8 /* UIWebSocketHandler.cpp */; };
-		8793AE1D113345230029D0C8 /* ui.proto in Sources */ = {isa = PBXBuildFile; fileRef = 8793AE1C113345170029D0C8 /* ui.proto */; };
 		8793AE67113358120029D0C8 /* ofxThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8793AE65113358120029D0C8 /* ofxThread.cpp */; };
 		E45BE0AA0E8CC67C009D7055 /* GLee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE0A90E8CC67C009D7055 /* GLee.a */; };
 		E45BE2E40E8CC69C009D7055 /* rtAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE2E30E8CC69C009D7055 /* rtAudio.a */; };
@@ -65,21 +61,6 @@
 		E4C2443910CC7693004149E2 /* openFrameworks-Info.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */; };
 		E4C246DA10CCAE22004149E2 /* freeimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C246D910CCAE22004149E2 /* freeimage.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildRule section */
-		8793AE16113344460029D0C8 /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			filePatterns = "*.proto";
-			fileType = pattern.proxy;
-			isEditable = 1;
-			outputFiles = (
-				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}.pb.h",
-				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}.pb.cc",
-			);
-			script = "/usr/local/bin/protoc -I${INPUT_FILE_DIR} -I/usr/local/include --cpp_out=${DERIVED_FILES_DIR} ${INPUT_FILE_DIR}/${INPUT_FILE_BASE}.proto";
-		};
-/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		E4C2421D10CC549C004149E2 /* PBXContainerItemProxy */ = {
@@ -188,17 +169,8 @@
 		877F1C871132206000DA13CE /* ofxCvShortImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxCvShortImage.cpp; path = ../../../addons/ofxOpenCv/src/ofxCvShortImage.cpp; sourceTree = SOURCE_ROOT; };
 		877F1C881132206000DA13CE /* ofxCvShortImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCvShortImage.h; path = ../../../addons/ofxOpenCv/src/ofxCvShortImage.h; sourceTree = SOURCE_ROOT; };
 		877F1C891132206000DA13CE /* ofxOpenCv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxOpenCv.h; path = ../../../addons/ofxOpenCv/src/ofxOpenCv.h; sourceTree = SOURCE_ROOT; };
-		8793ADC511330A8B0029D0C8 /* ThreadedWebSocketServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ThreadedWebSocketServer.cpp; path = ../../../../ofxPrimes/ofxWebSocket/src/ThreadedWebSocketServer.cpp; sourceTree = SOURCE_ROOT; };
-		8793ADC611330A8B0029D0C8 /* ThreadedWebSocketServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadedWebSocketServer.h; path = ../../../../ofxPrimes/ofxWebSocket/src/ThreadedWebSocketServer.h; sourceTree = SOURCE_ROOT; };
-		8793ADC711330A8B0029D0C8 /* WebSocketConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebSocketConfig.h; path = ../../../../ofxPrimes/ofxWebSocket/src/WebSocketConfig.h; sourceTree = SOURCE_ROOT; };
-		8793ADC811330A8B0029D0C8 /* WebSocketHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WebSocketHandler.cpp; path = ../../../../ofxPrimes/ofxWebSocket/src/WebSocketHandler.cpp; sourceTree = SOURCE_ROOT; };
-		8793ADC911330A8B0029D0C8 /* WebSocketHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebSocketHandler.h; path = ../../../../ofxPrimes/ofxWebSocket/src/WebSocketHandler.h; sourceTree = SOURCE_ROOT; };
-		8793ADF3113334520029D0C8 /* UIWebSocketHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIWebSocketHandler.cpp; sourceTree = "<group>"; };
-		8793ADF4113334520029D0C8 /* UIWebSocketHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWebSocketHandler.h; sourceTree = "<group>"; };
-		8793AE1C113345170029D0C8 /* ui.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ui.proto; sourceTree = "<group>"; };
 		8793AE65113358120029D0C8 /* ofxThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxThread.cpp; path = ../../../addons/ofxThread/src/ofxThread.cpp; sourceTree = SOURCE_ROOT; };
 		8793AE66113358120029D0C8 /* ofxThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxThread.h; path = ../../../addons/ofxThread/src/ofxThread.h; sourceTree = SOURCE_ROOT; };
-		8793AEB211335F390029D0C8 /* WebSocketServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebSocketServer.h; path = src/WebSocketServer.h; sourceTree = SOURCE_ROOT; };
 		E45BE0390E8CC647009D7055 /* FreeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FreeImage.h; path = ../../../libs/freeimage/include/FreeImage.h; sourceTree = SOURCE_ROOT; };
 		E45BE03F0E8CC650009D7055 /* fmod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fmod.h; path = ../../../libs/fmodex/include/fmod.h; sourceTree = SOURCE_ROOT; };
 		E45BE0400E8CC650009D7055 /* fmod.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = fmod.hpp; path = ../../../libs/fmodex/include/fmod.hpp; sourceTree = SOURCE_ROOT; };
@@ -374,7 +346,6 @@
 			children = (
 				8726098D11422325003C4EF1 /* ofxOsc */,
 				8793AE60113358120029D0C8 /* ofxThread */,
-				8793ADC311330A8B0029D0C8 /* ofxWebSocket */,
 				877F1C3D1132205F00DA13CE /* ofxMSAFluid */,
 				877F1C611132206000DA13CE /* ofxOpenCv */,
 			);
@@ -435,28 +406,6 @@
 			);
 			name = src;
 			path = ../../../addons/ofxOpenCv/src;
-			sourceTree = SOURCE_ROOT;
-		};
-		8793ADC311330A8B0029D0C8 /* ofxWebSocket */ = {
-			isa = PBXGroup;
-			children = (
-				8793ADC411330A8B0029D0C8 /* src */,
-			);
-			name = ofxWebSocket;
-			path = ../../../../ofxPrimes/ofxWebSocket;
-			sourceTree = SOURCE_ROOT;
-		};
-		8793ADC411330A8B0029D0C8 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				8793ADC511330A8B0029D0C8 /* ThreadedWebSocketServer.cpp */,
-				8793ADC611330A8B0029D0C8 /* ThreadedWebSocketServer.h */,
-				8793ADC711330A8B0029D0C8 /* WebSocketConfig.h */,
-				8793ADC811330A8B0029D0C8 /* WebSocketHandler.cpp */,
-				8793ADC911330A8B0029D0C8 /* WebSocketHandler.h */,
-			);
-			name = src;
-			path = ../../../../ofxPrimes/ofxWebSocket/src;
 			sourceTree = SOURCE_ROOT;
 		};
 		8793AE60113358120029D0C8 /* ofxThread */ = {
@@ -672,10 +621,6 @@
 			children = (
 				87260B0E11443DB8003C4EF1 /* FluidDrawer.cpp */,
 				87260B0F11443DB8003C4EF1 /* FluidDrawer.h */,
-				8793AEB211335F390029D0C8 /* WebSocketServer.h */,
-				8793AE1C113345170029D0C8 /* ui.proto */,
-				8793ADF3113334520029D0C8 /* UIWebSocketHandler.cpp */,
-				8793ADF4113334520029D0C8 /* UIWebSocketHandler.h */,
 				877F1C271132200000DA13CE /* msaColor.h */,
 				877F1C281132200000DA13CE /* Particle.cpp */,
 				877F1C291132200000DA13CE /* Particle.h */,
@@ -790,7 +735,6 @@
 				E4C2444710CC769B004149E2 /* CopyFiles */,
 			);
 			buildRules = (
-				8793AE16113344460029D0C8 /* PBXBuildRule */,
 			);
 			dependencies = (
 				E4C2422810CC54DA004149E2 /* PBXTargetDependency */,
@@ -855,7 +799,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8793AE1D113345230029D0C8 /* ui.proto in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				877F1C321132200000DA13CE /* Particle.cpp in Sources */,
@@ -870,9 +813,6 @@
 				877F1CDD1132206000DA13CE /* ofxCvGrayscaleImage.cpp in Sources */,
 				877F1CDE1132206000DA13CE /* ofxCvImage.cpp in Sources */,
 				877F1CDF1132206000DA13CE /* ofxCvShortImage.cpp in Sources */,
-				8793ADCA11330A8B0029D0C8 /* ThreadedWebSocketServer.cpp in Sources */,
-				8793ADCB11330A8B0029D0C8 /* WebSocketHandler.cpp in Sources */,
-				8793ADF5113334520029D0C8 /* UIWebSocketHandler.cpp in Sources */,
 				8793AE67113358120029D0C8 /* ofxThread.cpp in Sources */,
 				872609C411422326003C4EF1 /* IpEndpointName.cpp in Sources */,
 				872609C511422326003C4EF1 /* NetworkingUtils.cpp in Sources */,
@@ -1024,7 +964,6 @@
 				);
 				OTHER_LDFLAGS = (
 					"-lcv",
-					"-lprotobuf",
 					"-lcvaux",
 					"-lcxcore",
 				);
@@ -1060,11 +999,16 @@
 					/usr/local/include,
 					/usr/local/include/opencv,
 				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-lcv",
+					"-lcvaux",
+					"-lcxcore",
+				);
 			};
 			name = Release;
 		};
