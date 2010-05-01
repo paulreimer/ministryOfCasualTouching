@@ -125,17 +125,7 @@ void VideoSystem::update()
 }
 
 void VideoSystem::draw()
-{
-	if (settings.draw_flow)
-	{
-		ofSetColor(255,0,0);
-		ofFill();
-		for(int i=0; i<corners.size(); i++)
-			if(features_found[i] && feature_errors[i]<550)
-				ofLine(corners[i].x*myApp->window.width/VIDEO_WIDTH,corners[i].y*myApp->window.height/VIDEO_HEIGHT,
-					   cornersPrev[i].x*myApp->window.width/VIDEO_WIDTH,cornersPrev[i].y*myApp->window.height/VIDEO_HEIGHT);
-	}
-}
+{}
 
 void VideoSystem::destroy()
 	{

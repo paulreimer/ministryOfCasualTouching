@@ -51,7 +51,8 @@ public:
 	ofxOscReceiver	osc_in;
 	ofxOscSender	osc_out;
 #endif
-
+	ofPoint pos;
+	
 	int pmouseX, pmouseY;
 
 	// cache these for slightly better performance

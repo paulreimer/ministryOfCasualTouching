@@ -1,4 +1,5 @@
 #include "testApp.h"
+#include "ofxMSAFluidDrawer.h"
 
 #pragma mark App callbacks
 
@@ -11,9 +12,18 @@ testApp::setup()
 	
 	ofBackground(0, 0, 0);
 	ofSetBackgroundAuto(true);
+//	ofDisableSetupScreen();
 	ofSetVerticalSync(true);
 	ofSetFrameRate(60);
 
+	float hw		= ofGetWidth()/2; 
+	float hh		= ofGetHeight()/2; 
+	float screenFov = 60.0f;
+	float halfFov 	= PI * 60. / 360.0;
+	float theTan 	= tanf(halfFov);
+	float dist 		= hh / theTan;
+
+	pos.set(hw, hh, dist);
 #ifdef USE_VIDEO
 	videoSystem.setup();
 #endif
@@ -116,12 +126,25 @@ testApp::update()
 			physicsSystem.settings.drawParticles = (m.getArgAsInt32(0) != 0);
 		else if	(mAddr == "/physics/settings/renderUsingVA")
 			physicsSystem.settings.renderUsingVA = (m.getArgAsInt32(0) != 0);
-		else if	(mAddr == "/physics/fluidDrawer/drawMode")
-			physicsSystem.fluidDrawer.drawMode = m.getArgAsInt32(0);
+//		else if	(mAddr == "/physics/fluidDrawer/drawMode")
+//			physicsSystem.fluidDrawer.drawMode = m.getArgAsInt32(0);
 		else if	(mAddr == "/physics/fluidDrawer/minVelThreshold")
 			physicsSystem.fluidDrawer.minVelThreshold = m.getArgAsFloat(0);
 		else if	(mAddr == "/physics/fluidDrawer/maxVelThreshold")
 			physicsSystem.fluidDrawer.maxVelThreshold = m.getArgAsFloat(0);
+
+		else if	(mAddr == "/physics/fluidDrawer/drawColor")
+			physicsSystem.fluidDrawer.drawMode = FLUID_DRAW_COLOR;
+		else if	(mAddr == "/physics/fluidDrawer/drawMotion")
+			physicsSystem.fluidDrawer.drawMode = FLUID_DRAW_MOTION;
+		else if	(mAddr == "/physics/fluidDrawer/drawSpeed")
+			physicsSystem.fluidDrawer.drawMode = FLUID_DRAW_SPEED;
+		else if	(mAddr == "/physics/fluidDrawer/drawVectors")
+			physicsSystem.fluidDrawer.drawMode = FLUID_DRAW_VECTORS;
+		else if	(mAddr == "/physics/fluidDrawer/drawMaskedVectors")
+			physicsSystem.fluidDrawer.drawMode = FLUID_DRAW_VECTORS_MASKED;
+		else if	(mAddr == "/physics/fluidDrawer/drawTexture")
+			physicsSystem.fluidDrawer.drawMode = FLUID_DRAW_TEXTURE;
 
 		else if	(mAddr == "/physics/fluidSolver/viscosity")
 			physicsSystem.fluidSolver.viscocity = m.getArgAsFloat(0);
@@ -209,6 +232,17 @@ testApp::update()
 void
 testApp::draw()
 {
+	float w = ofGetWidth();
+	float h = ofGetHeight();
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+	gluLookAt(pos.x,	pos.y,	pos.z,
+			  w/2,		h/2,	0.,
+			  0.,		1.,		0.);
+
+	glScalef(1, -1, 1);           // invert Y axis so increasing Y goes down.
+  	glTranslatef(0, -ofGetHeight(), 0);       // shift origin up to upper-left corner.
 #ifdef USE_PHYSICS
 	physicsSystem.draw();
 #endif
@@ -260,6 +294,19 @@ void testApp::keyPressed  (int key){
 			break;
 		case '1':
 			videoSystem.vidGrabber.videoSettings();
+			break;
+
+		case OF_KEY_LEFT:
+			pos.x--;
+			break;
+		case OF_KEY_RIGHT:
+			pos.x++;
+			break;
+		case OF_KEY_UP:
+			pos.y++;
+			break;
+		case OF_KEY_DOWN:
+			pos.y--;
 			break;
 	}
 }

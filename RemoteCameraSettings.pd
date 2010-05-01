@@ -1,0 +1,207 @@
+#N canvas 0 22 1275 799 10;
+#X obj 649 101 cnv 15 245 300 empty empty Fluid_Solver_Params 60 290
+1 14 -203904 -66577 0;
+#X obj 423 101 cnv 15 225 300 empty empty Video_Params 70 290 1 14
+-204800 -66577 0;
+#X obj 272 211 cnv 15 150 190 empty empty Physics_Options 25 180 1
+14 -262130 -66577 0;
+#X msg 288 514 sendtyped /physics/settings/drawParticles i \$1;
+#X msg 288 534 sendtyped /physics/settings/renderUsingVA i \$1;
+#X msg 288 494 sendtyped /physics/settings/drawFluid i \$1;
+#X msg 288 433 sendtyped /physics/fluidSolver/doVorticityConfinement
+i \$1;
+#X msg 288 454 sendtyped /physics/fluidSolver/doRGB i \$1;
+#X obj 665 570 s params;
+#X obj 236 551 s params;
+#X obj 288 250 tgl 15 0 empty empty RGB 17 7 1 10 -262144 -1 -1 0 1
+;
+#X obj 288 330 tgl 15 0 empty empty renderUsingVA 17 7 1 10 -262144
+-1 -1 0 1;
+#X obj 288 229 tgl 15 0 empty empty Vorticity_Confinement 17 7 1 10
+-262144 -1 -1 0 1;
+#X obj 288 290 tgl 15 0 empty empty drawFluid 17 7 1 10 -262144 -1
+-1 0 1;
+#X obj 288 310 tgl 15 0 empty empty drawParticles 17 7 1 10 -262144
+-1 -1 0 1;
+#X obj 665 119 vsl 15 128 0 0.0002 0 0 empty empty Viscosity 0 -9 1
+10 -262144 -1 -1 0 1;
+#X obj 686 139 vsl 15 128 0 0.0003 0 0 empty empty Color_Diffusion
+0 -9 1 10 -262144 -1 -1 0 1;
+#X obj 707 159 vsl 15 128 0 0.1 0 0 empty empty Fade_Speed 0 -9 1 10
+-262144 -1 -1 0 1;
+#X obj 728 179 vsl 15 128 1 20 0 0 empty empty Solver_Iterations 0
+-9 1 10 -262144 -1 -1 0 1;
+#X obj 748 199 vsl 15 128 0 3 0 0 empty empty Draw_Mode 0 -9 1 10 -262144
+-1 -1 0 1;
+#X msg 665 433 sendtyped /physics/fluidSolver/viscosity f \$1;
+#X msg 686 453 sendtyped /physics/fluidSolver/colorDiffusion f \$1
+;
+#X msg 707 473 sendtyped /physics/fluidSolver/fadeSpeed f \$1;
+#X msg 728 493 sendtyped /physics/fluidSolver/solverIterations i \$1
+;
+#X msg 748 513 sendtyped /physics/fluidDrawer/drawMode i \$1;
+#X obj 667 -15 routeOSC /physics/settings/state;
+#X obj 665 -67 routeOSC /physics/fluidSolver/state;
+#X obj 272 101 cnv 15 150 110 empty empty Video_Options 28 100 1 14
+-232576 -66577 0;
+#X msg 288 755 sendtyped /video/settings/calc_flow i \$1;
+#X msg 288 715 sendtyped /video/settings/bLearnBg i \$1;
+#X msg 288 735 sendtyped /video/settings/draw_flow i \$1;
+#X obj 438 690 s params;
+#X obj 236 772 s params;
+#X obj 288 157 tgl 15 0 empty empty calcFlow 17 7 1 10 -262144 -1 -1
+0 1;
+#X obj 288 137 tgl 15 0 empty empty drawFlow 17 7 1 10 -262144 -1 -1
+0 1;
+#X obj 438 118 vsl 15 128 0 255 0 0 empty empty Threshold 0 -9 1 10
+-262144 -1 -1 0 1;
+#X obj 288 117 bng 15 250 50 0 empty empty Capture_BG 17 7 1 10 -262144
+-1 -1;
+#X obj 456 138 vsl 15 128 0 500 0 0 empty empty Max_Features 0 -9 1
+10 -262144 -1 -1 0 1;
+#X obj 474 158 vsl 15 128 0 10 0 0 empty empty Dist_Vec._Scale 0 -9
+1 10 -262144 -1 -1 0 1;
+#X obj 493 178 vsl 15 128 0 512 0 0 empty empty Dist._Vec._Threshold_Min
+0 -9 1 10 -262144 -1 -1 0 1;
+#X obj 511 198 vsl 15 128 0 512 0 0 empty empty Dist._Vec._Threshold_Max
+0 -9 1 10 -262144 -1 -1 0 1;
+#X msg 511 673 sendtyped /video/settings/dv_max_error f \$1;
+#X msg 493 653 sendtyped /video/settings/dv_min_error f \$1;
+#X msg 474 633 sendtyped /video/settings/dv_scale f \$1;
+#X msg 456 613 sendtyped /video/settings/max_features i \$1;
+#X msg 438 593 sendtyped /video/settings/threshold i \$1;
+#X obj 438 -16 routeOSC /video/settings/state;
+#X obj 101 211 cnv 15 170 190 empty empty Sync_State 50 180 1 14 -261234
+-66577 0;
+#X obj 117 328 bng 15 250 50 0 empty empty Fluid_Solver_Settings 17
+7 1 10 -262144 -1 -1;
+#X obj 117 349 bng 15 250 50 0 empty empty Video_Settings 17 7 1 10
+-262144 -1 -1;
+#X obj 117 307 bng 15 250 50 0 empty empty Physics_Settings 17 7 1
+10 -262144 -1 -1;
+#X msg 117 599 send /physics/settings/sync;
+#X msg 117 620 send /physics/fluidSolver/sync;
+#X msg 117 641 send /video/settings/sync;
+#X obj 618 -84 r state;
+#X obj 392 -33 r state;
+#X obj 65 658 s params;
+#X obj 667 10 unpack 0 0 0 0;
+#X obj 438 10 unpack 0 0 f 0 0 0 0 0;
+#X floatatom 665 63 5 0 0 0 - - -;
+#X floatatom 686 79 5 0 0 0 - - -;
+#X floatatom 707 63 5 0 0 0 - - -;
+#X floatatom 728 79 5 0 0 0 - - -;
+#X floatatom 748 63 5 0 0 0 - - -;
+#X floatatom 438 34 5 0 0 0 - - -;
+#X floatatom 456 50 5 0 0 0 - - -;
+#X floatatom 474 34 5 0 0 0 - - -;
+#X floatatom 493 50 5 0 0 0 - - -;
+#X floatatom 511 34 5 0 0 0 - - -;
+#X obj 775 219 vsl 15 128 1 20 0 0 empty empty Min_Vel_Threshold 0
+-9 1 10 -262144 -1 -1 0 1;
+#X obj 794 239 vsl 15 128 0 3 0 0 empty empty Max_Vel_Threshold 0 -9
+1 10 -262144 -1 -1 0 1;
+#X obj 665 -41 unpack f f f 0 0 0 f f;
+#X msg 775 533 sendtyped /physics/fluidDrawer/minVelThreshold f \$1
+;
+#X msg 794 553 sendtyped /physics/fluidDrawer/maxVelThreshold f \$1
+;
+#X obj 101 101 cnv 15 170 110 empty empty Connection 50 100 1 14 -204786
+-66577 0;
+#X msg 116 149 disconnect;
+#X obj 33 166 udpsend;
+#X obj 33 142 packOSC;
+#X obj 33 118 r params;
+#X obj -76 141 unpackOSC;
+#X obj -76 165 s state;
+#X msg 117 117 connect localhost 9000;
+#X obj -76 117 udpreceive 9001;
+#X connect 3 0 9 0;
+#X connect 4 0 9 0;
+#X connect 5 0 9 0;
+#X connect 6 0 9 0;
+#X connect 7 0 9 0;
+#X connect 10 0 7 0;
+#X connect 11 0 4 0;
+#X connect 12 0 6 0;
+#X connect 13 0 5 0;
+#X connect 14 0 3 0;
+#X connect 15 0 20 0;
+#X connect 16 0 21 0;
+#X connect 17 0 22 0;
+#X connect 18 0 23 0;
+#X connect 19 0 24 0;
+#X connect 20 0 8 0;
+#X connect 21 0 8 0;
+#X connect 22 0 8 0;
+#X connect 23 0 8 0;
+#X connect 24 0 8 0;
+#X connect 25 0 57 0;
+#X connect 26 0 71 0;
+#X connect 28 0 32 0;
+#X connect 29 0 32 0;
+#X connect 30 0 32 0;
+#X connect 33 0 28 0;
+#X connect 34 0 30 0;
+#X connect 35 0 45 0;
+#X connect 36 0 29 0;
+#X connect 37 0 44 0;
+#X connect 38 0 43 0;
+#X connect 39 0 42 0;
+#X connect 40 0 41 0;
+#X connect 41 0 31 0;
+#X connect 42 0 31 0;
+#X connect 43 0 31 0;
+#X connect 44 0 31 0;
+#X connect 45 0 31 0;
+#X connect 46 0 58 0;
+#X connect 48 0 52 0;
+#X connect 49 0 53 0;
+#X connect 50 0 51 0;
+#X connect 51 0 56 0;
+#X connect 52 0 56 0;
+#X connect 53 0 56 0;
+#X connect 54 0 26 0;
+#X connect 54 0 25 0;
+#X connect 55 0 46 0;
+#X connect 57 0 13 0;
+#X connect 57 1 14 0;
+#X connect 57 2 11 0;
+#X connect 57 3 63 0;
+#X connect 58 0 64 0;
+#X connect 58 1 65 0;
+#X connect 58 2 66 0;
+#X connect 58 3 67 0;
+#X connect 58 4 68 0;
+#X connect 58 5 36 0;
+#X connect 58 6 34 0;
+#X connect 58 7 33 0;
+#X connect 59 0 15 0;
+#X connect 60 0 16 0;
+#X connect 61 0 17 0;
+#X connect 62 0 18 0;
+#X connect 63 0 19 0;
+#X connect 64 0 35 0;
+#X connect 65 0 37 0;
+#X connect 66 0 38 0;
+#X connect 67 0 39 0;
+#X connect 68 0 40 0;
+#X connect 69 0 72 0;
+#X connect 70 0 73 0;
+#X connect 71 0 59 0;
+#X connect 71 1 60 0;
+#X connect 71 2 61 0;
+#X connect 71 3 62 0;
+#X connect 71 4 10 0;
+#X connect 71 5 12 0;
+#X connect 71 6 69 0;
+#X connect 71 7 70 0;
+#X connect 72 0 8 0;
+#X connect 73 0 8 0;
+#X connect 75 0 76 0;
+#X connect 77 0 76 0;
+#X connect 78 0 77 0;
+#X connect 79 0 80 0;
+#X connect 81 0 76 0;
+#X connect 82 0 79 0;
+#X coords 0 -1 1 1 795 302 1 100 100;

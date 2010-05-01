@@ -1,5 +1,3 @@
-#pragma once
-
 #include "PhysicsSystem.h"
 
 #include "testApp.h"
@@ -27,7 +25,7 @@ PhysicsSystem& PhysicsSystem::setup() {
 		.setVisc(0.00015)
 		.setColorDiffusion(0);
 	fluidDrawer.setup(&fluidSolver);
-	fluidDrawer.setDrawMode(FLUID_DRAW_VECTORS);
+	fluidDrawer.setDrawMode(FLUID_DRAW_TEXTURE);
 }
 
 void PhysicsSystem::update() {
