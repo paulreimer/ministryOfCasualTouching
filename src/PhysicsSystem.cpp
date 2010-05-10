@@ -25,7 +25,7 @@ PhysicsSystem& PhysicsSystem::setup() {
 		.setVisc(0.00015)
 		.setColorDiffusion(0);
 	fluidDrawer.setup(&fluidSolver);
-	fluidDrawer.setDrawMode(FLUID_DRAW_TEXTURE);
+	fluidDrawer.setDrawMode(FLUID_DRAW_VECTORS_MASKED);
 }
 
 void PhysicsSystem::update() {
